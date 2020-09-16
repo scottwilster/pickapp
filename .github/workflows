@@ -1,9 +1,13 @@
-workflow "Example Workflow" {
-  on = "push"
-  resolves = ["Lint"]
-}
+name: Python package
 
-action "Lint" {
-  uses = "lgeiger/black-action@master"
-  args = ". --check"
-}
+on: [push]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        python-version: [3.8]
+
+  steps:
+  - name: Black Code Formatter
+    uses: lgeiger/black-action@v1.0.1
