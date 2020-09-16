@@ -8,13 +8,13 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-# build/
+build/
 develop-eggs/
 dist/
 downloads/
 eggs/
 .eggs/
-# lib/
+lib/
 lib64/
 parts/
 sdist/
@@ -22,7 +22,7 @@ var/
 wheels/
 pip-wheel-metadata/
 share/python-wheels/
-# *.egg-info/
+*.egg-info/
 .installed.cfg
 *.egg
 MANIFEST
@@ -51,15 +51,16 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 
-# # Translations
-# *.mo
-# *.pot
+# Translations
+*.mo
+*.pot
 
-# # Django stuff:
-# *.log
-# local_settings.py
+# Django stuff:
+*.log
+local_settings.py
+# TODO: We should not be tracking this db in git.
 # db.sqlite3
-# db.sqlite3-journal
+db.sqlite3-journal
 
 # Flask stuff:
 instance/
