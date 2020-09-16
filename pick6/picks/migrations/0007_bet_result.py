@@ -6,13 +6,11 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('picks', '0006_auto_20200912_1647'),
+        ("picks", "0006_auto_20200912_1647"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='bet',
-            name='result',
-            field=models.IntegerField(default=1),
+            model_name="bet", name="result", field=models.IntegerField(default=1),
         ),
     ]

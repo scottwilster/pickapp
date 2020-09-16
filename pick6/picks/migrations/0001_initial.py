@@ -8,25 +8,45 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Team',
+            name="Team",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('team_text', models.CharField(max_length=40)),
-                ('pub_date', models.DateTimeField(verbose_name='date published')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("team_text", models.CharField(max_length=40)),
+                ("pub_date", models.DateTimeField(verbose_name="date published")),
             ],
         ),
         migrations.CreateModel(
-            name='Line',
+            name="Line",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('line_text', models.CharField(max_length=5)),
-                ('line_pts', models.IntegerField(default=0)),
-                ('team', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='picks.team')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("line_text", models.CharField(max_length=5)),
+                ("line_pts", models.IntegerField(default=0)),
+                (
+                    "team",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE, to="picks.team"
+                    ),
+                ),
             ],
         ),
     ]

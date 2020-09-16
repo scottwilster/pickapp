@@ -6,22 +6,18 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('picks', '0001_initial'),
+        ("picks", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='team',
-            name='line_pts',
-            field=models.IntegerField(default=0),
+            model_name="team", name="line_pts", field=models.IntegerField(default=0),
         ),
         migrations.AddField(
-            model_name='team',
-            name='line_text',
+            model_name="team",
+            name="line_text",
             field=models.CharField(default=0, max_length=50),
             preserve_default=False,
         ),
-        migrations.DeleteModel(
-            name='Line',
-        ),
+        migrations.DeleteModel(name="Line",),
     ]
