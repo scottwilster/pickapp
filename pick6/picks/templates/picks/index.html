@@ -1,0 +1,176 @@
+<html>
+<head>
+    <title>Mowtown Beatdown</title>
+</head>
+<body>
+
+<!-- css style -->
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'picks/style.css' %}">
+
+
+<!-- Heading -->
+<h1><b>
+    <p align = "center" >
+        <span style="color.red">Motown Beatdown</span>
+    </p>
+</b></h1>
+<hr width = "1000px" height = "25px" color = "black"/>
+
+
+<!-- Logo -->
+<p align = "center" >
+</br>
+    {% load static %}
+    <img
+            width = "350px"
+            height = "300px"
+            src="{% static 'picks/images/wagonwheel.jpg' %}" />
+</p>
+
+
+<!-- link to Office Football Pool -->
+<p align = "center">
+    <b>
+    <br/>
+    <a href="https://www.officefootballpool.com/picks" target=_blank">WanPing Zhang Zen</a>
+</b>
+</p>
+
+
+<!-- link to selection page-->
+<p align = "center">
+    <b>
+    <a href="http://127.0.0.1:8000/admin/" color = "black" target=_blank">Make Your Pick</a>
+    </b>
+</p>
+
+
+
+<!-- first form
+<form action="/your-name/" method="post">
+    <label for="your_name">User name: </label>
+    <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
+   <input type="submit" value="OK">
+</form> -->
+
+<!-- table try -->
+<h1 align = "center">
+    Last 6 picks
+</h1>
+
+<table width = "1000"
+       spacing = "20"
+       align = "center" >
+
+    <tr text-align = "center" >
+        <th>Date Entered</th>
+
+        <th>User</th>
+
+        <th>Team</th>
+
+        <th>Bet Type</th>
+
+        <th>Line</th>
+
+        <th>Result</th>
+    </tr>
+    {% for team in latest_team_list %}
+    <tr width = "1000"
+       spacing = "20"
+       align = "center"
+       text-align = "center" >
+
+        <td>{{ team.pub_date }}</td>
+        <td>{{ team.user_name }}</td>
+        <td>{{ team.team_text }}</td>
+        <td>{{ team.line_text }}</td>
+        <td>{{ team.line_pts }}</td>
+        <td>{{ team.result }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<!-- season total - User Name, total picks, total wins, include entire group -->
+
+<h1 align = "center" >
+    <br/>
+    Season Totals
+</h1>
+
+<table width = "500"
+       spacing = "20"
+       align = "center" >
+
+    <tr text-align = "center" >
+
+        <th>User</th>
+
+        <th>Wins</th>
+
+
+    </tr>
+   <!-- {% for team in latest_team_list %} -->
+    <tr width = "500"
+       spacing = "20"
+       align = "center"
+       text-align = "center" >
+
+        <td>{{ team.user_name }}</td>
+
+        <td>{{ team.result }}</td>
+
+
+    </tr>
+   <!-- {% endfor %} -->
+    <p align = "center" >
+        <b>
+        Total Wins: {{sum_result}}
+            <br/>
+        Total Picks: {{count_picks}}
+            <br/>
+
+    </b>
+    </p>
+</table>
+
+
+
+
+<!-- list of last 6 teams
+<p1><big>
+    {% if latest_team_list %}
+    <ol>
+    {% for team in latest_team_list %}
+        <p align = "center" >
+        <li><a href="/admin{{ pick.id }}">{{ team.team_text }}</a></li>
+    {% endfor %}
+    </ol>
+{% else %}
+    <p>No picks are available!</p>
+{% endif %}
+</big></p1>
+-->
+
+
+<!-- list of last 6 users
+<p2><big>
+    <p align = "center" >
+    {% if latest_user_name_list %}
+    <ol>
+    {% for user in latest_user_name_list %}
+        <li><a href="/admin{{ user.id }}">{{ user.user_name }}</a></li>
+    {% endfor %}
+    </ol>
+{% else %}
+    <p>No users are available!</p>
+{% endif %}
+</big></p2>
+-->
+
+</body>
+</html>
+
+
