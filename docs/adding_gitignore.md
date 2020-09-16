@@ -10,3 +10,6 @@ git ls-files --ignored --exclude-standard -z
 ```
 git ls-files --ignored --exclude-standard -z | xargs -0 git rm --cached
 ```
+
+- note, to do it step by step I would keep branching off the PR branch, test it, and if it succeeds merge it back in
+  - if not I can delete the branch and start back at the PR branch
