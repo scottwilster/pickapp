@@ -6,7 +6,7 @@ conda env create -f environment_mac.yml
 ```
   - ubuntu:
 ```
-conda env create -f environment.yml
+conda env create -f environment_ubuntu.yml
 ```
 - after it's done, make sure to activate the conda env
 ```
