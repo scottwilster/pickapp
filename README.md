@@ -1,17 +1,9 @@
 # Environment
-- After conda is installed, to get the packages you need run
-  - mac:
-```
-conda env create -f environment_mac.yml
-```
-  - ubuntu:
-```
-conda env create -f environment.yml
-```
-- after it's done, make sure to activate the conda env
-```
-conda activate pickapp
-```
+- There is a makefile set up now that can handle the conda environment install / update
+`make env`
+  - this will tell you to run the `conda activate pickapp` commands
+  - unfortunately, I am having a tricky time doing this without make making this the base env
+
 
 # Error handling (mac)
 - I keep running in to an error where the miniconda gets moved to the end of the path
