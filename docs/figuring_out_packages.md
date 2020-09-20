@@ -13,9 +13,13 @@ conda install asgiref django pip pypandoc pytz setuptools sqlparse wheel
 ```
 conda env export > environment.yml
 ```
-  - then add them to the pip section of the environment.yml file and run:
+  - then add them to the pip section of the environment.yml file and run ubuntu:
 ```
 conda env update -n pickapp --file environment.yml --prune
+```
+- and on mac:
+```
+conda env update -n pickapp --file environment_mac.yml --prune
 ```
   - I had to `conda install nbconvert` for publisher
   - I had to `conda install numpy pandas matplotlib scipy seaborn` for aggregate
