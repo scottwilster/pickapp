@@ -9,13 +9,17 @@ conda install asgiref django pip pypandoc pytz setuptools sqlparse wheel
 - **NOTE**: pkg_resources is in setuptools, which is why it doesn't have an .egg-info folder
 - **NOTE**: I learne this from errors, but these three packages have to be pip installed, not conda:
 `sly publisher aggregate`
-  - to do this, I will create then environment.yml file:
+  - to do this, I will create then environment_ubuntu.yml file:
 ```
-conda env export > environment.yml
+conda env export > environment_ubuntu.yml
 ```
-  - then add them to the pip section of the environment.yml file and run:
+  - then add them to the pip section of the environment_ubuntu.yml file and run ubuntu:
 ```
-conda env update -n pickapp --file environment.yml --prune
+conda env update -n pickapp --file environment_ubuntu.yml --prune
+```
+- and on mac:
+```
+conda env update -n pickapp --file environment_mac.yml --prune
 ```
   - I had to `conda install nbconvert` for publisher
   - I had to `conda install numpy pandas matplotlib scipy seaborn` for aggregate
