@@ -8,7 +8,7 @@ import pytest
 # What the fuck shit kinda shit is django in to that you have to do this...
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "pick6.pick6.settings")
 
-from pick6.picks.models import sql_to_df
+from pick6.models import sql_to_df
 
 
 @pytest.mark.models
